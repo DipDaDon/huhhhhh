@@ -46,27 +46,6 @@ def arg_to_list(arg: Any, n: int) -> list:
         return [arg for _ in range(n)]
 
 
-def args_to_lists(*args: list) -> list:
-    arg_lists = []
-    for arg in args:
-        if isinstance(arg, collections.abc.Iterable) and not isinstance(arg, str):
-            arg_lists.append(arg)
-        else:
-            arg_lists.append([arg])
-    lengths = list(map(len, arg_lists))
-    n = max(lengths)
-    if n == 1:
-        return arg_lists
-
-    args_return = []
-    for arg, l in zip(arg_lists, lengths):
-        if l == n:
-            args_return.append(arg)
-        else:
-            args_return.append([arg[0] for _ in range(n)])
-    return args_return
-
-
 def rotation_matrix(angle: float) -> np.ndarray:
     """
 

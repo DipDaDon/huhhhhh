@@ -79,7 +79,6 @@ class Element:
         self.element_force_vector: np.ndarray = np.array([])
         self.q_load: tuple = (0.0, 0.0)
         self.q_perp_load: tuple = (0.0, 0.0)
-        self.q_direction: Optional[str] = None
         self.q_angle: Optional[float] = None
         self.dead_load: float = 0.0
         self.N_1: Optional[float] = None

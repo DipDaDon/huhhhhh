@@ -158,14 +158,6 @@ class SystemElements:
         self.reduced_system_matrix: Optional[np.ndarray] = None
         self._vertices: Dict[Vertex, int] = {}  # maps vertices to node ids
 
-    @property
-    def id_last_element(self) -> int:
-        return max(self.element_map.keys())
-
-    @property
-    def id_last_node(self) -> int:
-        return max(self.node_map.keys())
-
     def add_element_grid(
         self,
         x: Union[List[float], np.ndarray],
@@ -1007,7 +999,6 @@ class SystemElements:
                 q_perp_arr[i][0] * self.load_factor,
                 q_perp_arr[i][1] * self.load_factor,
             )
-            el.q_direction = direction[i]
             el.q_angle = rotation[i]
 
     def point_load(
