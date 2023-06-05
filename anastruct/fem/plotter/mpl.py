@@ -367,8 +367,8 @@ class Plotter(PlottingValues):
                 else:
                     direction = -1
 
-                h1 = 0.05 * max_val * abs(qi) / self.max_q
-                h2 = 0.05 * max_val * abs(q) / self.max_q
+                h1 = 0.05 * max_val * abs(qi) / self.max_qn
+                h2 = 0.05 * max_val * abs(q) / self.max_qn
 
                 ai = -el.q_angle
                 el_angle = el.angle
